@@ -9,9 +9,9 @@ project ('lvtk', ['cpp', 'c'],
         'cpp_std=c++17',
     ])
 
-lilv_dep = dependency('lilv', required: false)
-suil_dep = dependency('suil', required: false)
-lvtk_dep = dependency('lvtk', required: false)
+lilv_dep = dependency('lilv-0', required: false)
+suil_dep = dependency('suil-0', required: false)
+lvtk_dep = dependency('lvtk-3', required: false)
 
 lvtk_host_dep = declare_dependency (
     include_directories: include_directories('include'),
@@ -28,4 +28,4 @@ pkg.generate (
     filebase    : 'lvtk-host-@0@'.format (lvtk_abi_version),
     version     : meson.project_version(),
     install_dir : get_option ('libdir') / 'pkgconfig',
-    requires    : [ lilv_dep, suil_dep, lvtk_dep ])
+    requires    : [ ])
